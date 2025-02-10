@@ -2,33 +2,36 @@ package academy.javapro;
 
 public class Main {
     public static void main(String[] args) {
-        // Step 1: Create a new Tesla Model S, 2024
-        // TODO: Add your code here
+        //p1
+        Tesla tesla = new Tesla("Model S", 2024);
 
-        // Step 2: Display initial status
+        //p2
         System.out.println("Initial Status:");
-        // TODO: Display car's initial state
-
-        // Step 3: Start the car and test basic vehicle functions
+        System.out.println(tesla.getMake() + " " + tesla.getModel() + " " + tesla.getYear());
+        System.out.println("Running: " + tesla.isRunning());
+        System.out.println("Autopilot: " + tesla.isAutopilotEnabled());
+        System.out.println("Charging: " + tesla.isCharging());
+       //p3
         System.out.println("\nTesting basic vehicle functions:");
-        // TODO: Start engine
-        // TODO: Accelerate
-        // TODO: Brake
-
-        // Step 4: Test autonomous features
+        tesla.startEngine();
+        tesla.accelerate();
+        tesla.brake();
+        //p4
         System.out.println("\nTesting autonomous features:");
-        // TODO: Enable autopilot
-        // TODO: Check if autopilot is enabled
-        // TODO: Disable autopilot
+        tesla.enableAutopilot();
+        System.out.println("Autopilot is currently: " + (tesla.isAutopilotEnabled() ? "enabled" : "disabled"));
+        tesla.disableAutopilot();
 
-        // Step 5: Test electric features
+        //p5
         System.out.println("\nTesting electric features:");
-        // TODO: Start charging
-        // TODO: Check charging status
+        tesla.charge();
+        System.out.println("Charging status: " + tesla.isCharging());
 
-        // Step 6: Stop the car and display final status
+        // p6
         System.out.println("\nFinal car status:");
-        // TODO: Stop engine
-        // TODO: Display final state
+        tesla.stopEngine();
+        System.out.println("Running: " + tesla.isRunning());
+        System.out.println("Autopilot: " + tesla.isAutopilotEnabled());
+        System.out.println("Charging: " + tesla.isCharging());
     }
 }
